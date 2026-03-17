@@ -1,185 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mosfeque Us Salehin | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Dr. Mosfeque Us Salehin | Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased relative overflow-x-hidden">
+    
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-slate-50">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-40 animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-[30rem] h-[30rem] bg-blue-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-40 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[25rem] h-[25rem] bg-teal-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-40 animate-blob animation-delay-4000"></div>
+    </div>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Dr. Salehin<span>.</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Role</a></li>
-                <li><a href="#qualification">Timeline</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+    <nav id="navbar" class="fixed w-full bg-white/90 backdrop-blur-md z-50 transition-all duration-300 border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-2xl text-emerald-800 tracking-tight"><i class="fa-solid fa-heart-pulse mr-2"></i>Dr. Salehin</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-slate-600 hover:text-emerald-600 font-medium transition">About</a>
+                    <a href="#services" class="text-slate-600 hover:text-emerald-600 font-medium transition">Specialties</a>
+                    <a href="#experience" class="text-slate-600 hover:text-emerald-600 font-medium transition">Degrees</a>
+                    <a href="#contact" class="bg-emerald-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-emerald-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Get Serial</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-emerald-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#about" class="block px-3 py-3 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition mobile-link">About</a>
+                <a href="#services" class="block px-3 py-3 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition mobile-link">Specialties</a>
+                <a href="#experience" class="block px-3 py-3 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition mobile-link">Degrees</a>
+                <a href="#contact" class="block mt-4 text-center bg-emerald-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-emerald-700 transition mobile-link">Get Serial</a>
             </div>
         </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-shape"></div>
+    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 min-h-[90vh]">
+        <div class="md:w-1/2 flex flex-col items-start text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
+            <div class="inline-block bg-emerald-100 text-emerald-800 font-semibold px-4 py-1.5 rounded-full text-sm mb-4 border border-emerald-200 shadow-sm">
+                <i class="fa-solid fa-certificate mr-1"></i> BMDC Reg: A-12345
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-4">Dr. Mosfeque Us Salehin</h1>
+            <h2 class="text-xl md:text-2xl text-emerald-700 font-semibold mb-6">Surgery Specialist</h2>
+            <p class="text-lg text-slate-600 mb-8 max-w-lg mx-auto md:mx-0">Providing standard medical care and consultation with a focus on patient well-being, proper diagnosis, and effective treatment plans.</p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#contact" class="bg-emerald-600 text-white px-8 py-3.5 rounded-md font-bold hover:bg-emerald-700 transition shadow-lg hover:shadow-xl text-center"><i class="fa-regular fa-calendar-check mr-2"></i>Book Appointment</a>
+            </div>
+        </div>
+        <div class="md:w-1/2 w-full" data-aos="fade-left" data-aos-duration="1000">
+            <img src="/assets/doctor.jpg" alt="Dr. Mosfeque Us Salehin" class="rounded-xl shadow-2xl object-cover h-[400px] md:h-[550px] w-full border-4 border-white">
+        </div>
+    </section>
+
+    <section id="services" class="bg-white py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Treatment & Specialties</h2>
+                <div class="w-20 h-1.5 bg-emerald-600 mx-auto rounded-full"></div>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-12 items-center">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Academic Qualifications</h2>
+                <ul id="experience-list" class="space-y-6"></ul>
+            </div>
+            <div class="md:w-1/2 glow-card w-full group" data-aos="fade-left" data-aos-delay="200">
+                <div class="glow-inner bg-white p-8 rounded-xl shadow-md border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-800"><i class="fa-solid fa-quote-left text-emerald-500 mr-2"></i>Doctor's Message</h3>
+                    <p class="text-slate-600 leading-relaxed">"Accurate diagnosis is the first step to a cure. I prioritize listening carefully to my patients' symptoms to ensure they receive the right tests and the most effective, accessible medicine."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-6">Chamber Details</h2>
+                <div class="bg-slate-800 p-6 rounded-lg mb-6 border border-slate-700">
+                    <h4 class="text-emerald-400 font-bold text-xl mb-2"><i class="fa-solid fa-hospital mr-2"></i>Rajshahi Specialized Hospital</h4>
+                    <p class="text-slate-300 mb-2"><i class="fa-solid fa-location-dot mr-2 text-emerald-500"></i>Laxmipur Moor, Rajshahi, Bangladesh</p>
+                    <div class="flex items-center gap-2 text-slate-300 mt-4 border-t border-slate-600 pt-4">
+                        <span class="font-bold"><i class="fa-regular fa-clock mr-2 text-emerald-500"></i>Visiting Hours:</span> 
+                        <span class="bg-slate-700 px-3 py-1 rounded text-sm">Sat - Thu (5:00 PM - 9:00 PM)</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 mb-3"><i class="fa-solid fa-phone mr-2 text-emerald-500"></i><strong>Serial/Booking:</strong> +880 1711-000000</p>
+                <p class="text-slate-400 mb-2"><i class="fa-solid fa-envelope mr-2 text-emerald-500"></i><strong>Email:</strong> doctor@example.com</p>
+            </div>
+            <div class="bg-white text-slate-900 p-8 rounded-xl shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <h3 class="text-2xl font-bold mb-6">Request a Serial</h3>
+                <form id="contact-form" class="space-y-4">
+                    <div class="relative">
+                        <i class="fa-regular fa-user absolute left-4 top-4 text-slate-400"></i>
+                        <input type="text" id="name" required placeholder="Patient's Name" class="w-full pl-10 pr-4 py-3 rounded-md bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none transition">
+                    </div>
+                    <div class="relative">
+                        <i class="fa-solid fa-phone absolute left-4 top-4 text-slate-400"></i>
+                        <input type="tel" id="phone" required placeholder="Mobile Number (+880...)" class="w-full pl-10 pr-4 py-3 rounded-md bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none transition">
+                    </div>
+                    
+                    <select id="date-select" required class="w-full px-4 py-3 rounded-md bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none transition text-slate-600">
+                        <option value="">Select Appointment Date</option>
+                        <option value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="custom">Pick a Specific Date...</option>
+                    </select>
+                    
+                    <input type="date" id="custom-date" class="hidden w-full px-4 py-3 rounded-md bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none transition text-slate-600">
+                    
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-md transition duration-300 shadow-lg transform active:scale-95"><i class="fa-solid fa-paper-plane mr-2"></i>Confirm Serial</button>
+                </form>
+                <p id="form-status" class="hidden mt-4 text-emerald-600 font-bold text-center"><i class="fa-solid fa-circle-check mr-2"></i>Request sent! The assistant will call you to confirm.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="chatbot-widget" class="fixed bottom-6 left-6 z-[100] flex flex-col items-start">
         
-        <div class="container hero-content">
-            <div class="hero-text reveal fade-right">
-                <span class="badge">General Surgery Specialist</span>
-                <h1>Dr. Mosfeque Us <br> Salehin</h1>
-                <p>Assistant Registrar (Surgery) at Rajshahi Medical College Hospital. Dedicated to advanced surgical care and medical excellence.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Book Appointment <i class="fas fa-arrow-right"></i></a>
-                    <a href="#qualification" class="btn btn-outline">View Experience</a>
+        <div id="chatbot-window" class="hidden w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 mb-4 overflow-hidden transform transition-all duration-300 origin-bottom-left scale-0">
+            <div class="bg-emerald-600 text-white p-4 flex justify-between items-center shadow-md z-10 relative">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-emerald-600 mr-3">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Clinic Assistant</h4>
+                        <p class="text-xs text-emerald-100">Replies instantly</p>
+                    </div>
+                </div>
+                <button id="close-chat" class="text-white hover:text-emerald-200 transition transform hover:rotate-90"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            
+            <div id="chat-messages" class="h-72 p-4 overflow-y-auto bg-slate-50 space-y-3 flex flex-col text-sm">
+                <div class="bg-white text-slate-700 p-3 rounded-lg rounded-tl-none shadow-sm max-w-[85%] border border-slate-100">
+                    Hello! 👋 I'm Dr. Salehin's virtual assistant. Ask me about the <strong>WhatsApp number</strong>, <strong>visiting hours</strong>, or <strong>chamber location</strong>!
                 </div>
             </div>
             
-            <div class="hero-img reveal fade-left">
-                <div class="img-frame">
-                    <img src="assets/doctor.jpg" alt="Dr. Mosfeque Us Salehin">
-                    <div class="floating-card">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Assistant Registrar (Surgery)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header reveal fade-up">
-                <h2>Current Position</h2>
-                <div class="line"></div>
-            </div>
-            
-            <div class="role-card reveal fade-up">
-                <div class="icon-box">
-                    <i class="fas fa-user-md"></i>
-                </div>
-                <div class="role-info">
-                    <h3>Assistant Registrar (Surgery)</h3>
-                    <h4>Rajshahi Medical College Hospital</h4>
-                    <p>Managing surgical wards, performing emergency and elective surgeries, and supervising junior doctors.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="qualification" class="qualification-section">
-        <div class="container">
-            <div class="section-header reveal fade-up">
-                <h2>Academic Journey</h2>
-                <div class="line"></div>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item reveal fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Current</div>
-                    <div class="timeline-content">
-                        <div class="degree-badge">Specialization</div>
-                        <h3>FCPS Part 2 Trainee</h3>
-                        <h4>General Surgery</h4>
-                        <p>Bangladesh College of Physicians and Surgeons (BCPS)</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Graduation</div>
-                    <div class="timeline-content">
-                        <div class="degree-badge">MBBS</div>
-                        <h3>Bachelor of Medicine & Surgery</h3>
-                        <h4>Sher-e-Bangla Medical College</h4>
-                        <p>Completed with internship training.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">HSC</div>
-                    <div class="timeline-content">
-                        <h3>Higher Secondary</h3>
-                        <h4>New Govt. Degree College, Rajshahi</h4>
-                        <p>Science Group</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal fade-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">SSC</div>
-                    <div class="timeline-content">
-                        <h3>Secondary School</h3>
-                        <h4>Nazipur Govt. Model High School</h4>
-                        <p>Science Group</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header reveal fade-up">
-                <h2>Get in Touch</h2>
-                <div class="line"></div>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info reveal fade-right">
-                    <div class="info-card">
-                        <i class="fas fa-hospital"></i>
-                        <div>
-                            <h4>Visit Me</h4>
-                            <p>Rajshahi Medical College Hospital</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <div>
-                            <h4>Email Me</h4>
-                            <p>doctor@example.com</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Call Me</h4>
-                            <p>+880 17XX XXXXXX</p>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form reveal fade-left">
-                    <h3>Send a Message</h3>
-                    <div class="input-group">
-                        <input type="text" required>
-                        <label>Your Name</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" required>
-                        <label>Your Email</label>
-                    </div>
-                    <div class="input-group">
-                        <textarea required></textarea>
-                        <label>Message</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+            <div class="p-3 bg-white border-t border-slate-100">
+                <form id="chat-form" class="flex gap-2">
+                    <input type="text" id="chat-input" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm transition" placeholder="Type your message..." autocomplete="off">
+                    <button type="submit" class="bg-emerald-600 text-white px-4 py-2.5 rounded-lg hover:bg-emerald-700 transition shadow-md active:scale-95"><i class="fa-solid fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
-    </section>
+        
+        <button id="chatbot-toggle" class="bg-slate-800 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center text-2xl relative group border-2 border-emerald-500">
+            <span class="absolute left-16 bg-slate-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-medium">Ask Assistant</span>
+            <i class="fa-solid fa-message animate-bounce mt-1"></i>
+        </button>
+    </div>
 
-    <footer>
-        <p>&copy; 2026 Dr. Mosfeque Us Salehin. All rights reserved.</p>
-    </footer>
+    <div id="floating-buttons-container"></div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

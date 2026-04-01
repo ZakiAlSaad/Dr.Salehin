@@ -1,18 +1,21 @@
 body { 
     font-family: 'Inter', sans-serif; 
+    background-color: #f8fafc;
 }
 
 /* Custom gentle pulse for the WhatsApp button */
 @keyframes gentle-pulse {
     0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-    50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
 }
 
 .animate-whatsapp {
     animation: gentle-pulse 2.5s infinite;
 }
 
-/* LIVE SPOTLIGHT BORDER GLOW */
+/* =========================================
+   LIVE SPOTLIGHT BORDER GLOW (Clinical Blue)
+========================================= */
 #services-grid {
     group: glow-container;
 }
@@ -33,12 +36,12 @@ body {
     border-radius: inherit;
     background: radial-gradient(
         400px circle at var(--mouse-x, 0) var(--mouse-y, 0),
-        rgb(255, 0, 0), /* Subtle Emerald Glow */
-        transparent 20%
+        rgba(37, 99, 235, 0.35), /* Soft Clinical Blue Glow */
+        transparent 30%
     );
     z-index: 0;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
 .glow-card:hover::before {
@@ -48,14 +51,15 @@ body {
 .glow-inner {
     position: relative;
     z-index: 1;
-    background-color: #f8fafc;
+    background-color: #ffffff; 
     border-radius: inherit;
     margin: 1px; 
     height: calc(100% - 2px);
     width: calc(100% - 2px);
 }
+
 /* =========================================
-   WELCOME POPUP - DOCTOR'S THEME 
+   WELCOME POPUP - DOCTOR'S THEME (Blue)
 ========================================= */
 .popup-overlay {
     position: fixed;
@@ -63,7 +67,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.7); /* Darker blur */
+    background: rgba(15, 23, 42, 0.6); 
     backdrop-filter: blur(8px);
     z-index: 9999;
     display: flex;
@@ -87,17 +91,16 @@ body {
     overflow: hidden;
     text-align: center;
     position: relative;
-    /* Bouncy Entrance Animation */
     transform: translateY(40px) scale(0.9);
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); 
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(37, 99, 235, 0.1);
 }
 
 .popup-overlay.show .medical-theme {
     transform: translateY(0) scale(1);
 }
 
-/* Decorative Emerald Top Bar */
+/* Decorative Blue Top Bar */
 .medical-theme::before {
     content: '';
     position: absolute;
@@ -105,7 +108,7 @@ body {
     left: 0;
     width: 100%;
     height: 6px;
-    background: linear-gradient(90deg, #10b981, #34d399);
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
 }
 
 .close-popup {
@@ -130,11 +133,11 @@ body {
 .close-popup:hover { 
     background: #fee2e2; 
     color: #ef4444; 
-    transform: rotate(90deg); /* Animated close button */
+    transform: rotate(90deg); 
 }
 
 .popup-header {
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
     padding: 40px 20px 20px;
     position: relative;
 }
@@ -154,7 +157,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(16, 185, 129, 0.2);
+    background: rgba(59, 130, 246, 0.2); /* Light blue pulse */
     border-radius: 50%;
     animation: pulse-animation 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
@@ -165,7 +168,7 @@ body {
 }
 
 .popup-icon {
-    background: linear-gradient(135deg, #10b981, #059669); /* Emerald Gradient */
+    background: linear-gradient(135deg, #3b82f6, #1e40af); /* Blue Gradient */
     color: white;
     width: 60px;
     height: 60px;
@@ -176,7 +179,7 @@ body {
     font-size: 1.8rem;
     position: relative;
     z-index: 2;
-    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
     animation: heartbeat 1.5s infinite;
 }
 
@@ -224,7 +227,7 @@ body {
 .stat-value {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #059669; /* Emerald */
+    color: #2563eb; /* Medical Blue Numbers */
     font-family: 'Inter', sans-serif;
 }
 
@@ -264,18 +267,18 @@ body {
 .btn-explore:hover { background: #e2e8f0; color: #0f172a; }
 
 .btn-contact {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 .btn-contact:hover { 
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
 }
 
 /* =========================================
-   POPUP MOBILE RESPONSIVENESS (< 576px) 
+   MOBILE RESPONSIVENESS (< 576px) 
 ========================================= */
 @media (max-width: 575px) {
     .medical-theme {
@@ -313,16 +316,12 @@ body {
         font-size: 0.85rem; 
     }
     .popup-actions { 
-        flex-direction: column; /* Stack buttons on small screens */
+        flex-direction: column; 
         gap: 10px; 
     }
-}
-
-/* Fix Chatbot Window for Mobile */
-@media (max-width: 575px) {
     #chatbot-window {
-        width: calc(100vw - 40px); /* Makes chat window fit mobile screen */
-        bottom: 80px; /* Moves it above the floating button */
+        width: calc(100vw - 40px);
+        bottom: 80px; 
     }
 }
 
@@ -334,9 +333,9 @@ body {
     background: #f1f5f9; 
 }
 ::-webkit-scrollbar-thumb { 
-    background: #10b981; 
+    background: #3b82f6; 
     border-radius: 4px; 
 }
 ::-webkit-scrollbar-thumb:hover { 
-    background: #059669; 
+    background: #2563eb; 
 }

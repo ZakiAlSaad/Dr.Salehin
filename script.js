@@ -6,7 +6,7 @@ const servicesData = [
     { icon: '<i class="fa-solid fa-lungs"></i>', title: 'Respiratory Care', description: 'Diagnosis and management of asthma, COPD, chronic cough, and other respiratory tract issues.' },
     { icon: '<i class="fa-solid fa-viruses"></i>', title: 'Infectious Diseases', description: 'Expert treatment for Dengue, Typhoid, Malaria, and other common tropical fevers.' },
     { icon: '<i class="fa-solid fa-stomach"></i>', title: 'Gastric & Liver Issues', description: 'Management of acidity, IBS, fatty liver, jaundice, and other gastrointestinal conditions.' },
-    { icon: '<i class="fa-solid fa-ribbon text-teal-500"></i>', title: 'Thyroid Disorders', description: 'Comprehensive evaluation and treatment plans for hypothyroidism, hyperthyroidism, and goiter.' },
+    { icon: '<i class="fa-solid fa-ribbon text-cyan-500"></i>', title: 'Thyroid Disorders', description: 'Comprehensive evaluation and treatment plans for hypothyroidism, hyperthyroidism, and goiter.' },
     { icon: '<i class="fa-solid fa-bone"></i>', title: 'Arthritis & Joint Pain', description: 'Relief and long-term care for osteoarthritis, rheumatoid arthritis, gout, and chronic body aches.' },
     { icon: '<i class="fa-solid fa-kidneys"></i>', title: 'Kidney & Urinary Health', description: 'Screening for kidney disease and effective treatment for urinary tract infections (UTIs).' }
 ];
@@ -27,7 +27,7 @@ function renderServices() {
     grid.innerHTML = servicesData.map((service, index) => `
         <div class="glow-card shadow-sm hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="${(index % 3) * 150}">
             <div class="glow-inner p-8 flex flex-col items-start transition-colors duration-300 h-full">
-                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-emerald-600 group-hover:text-white transition duration-300">
+                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-blue-600 group-hover:text-white transition duration-300">
                     ${service.icon}
                 </div>
                 <h3 class="text-xl font-bold mb-3 text-slate-900">${service.title}</h3>
@@ -41,7 +41,7 @@ function renderExperience() {
     const list = document.getElementById('experience-list');
     list.innerHTML = experienceData.map((item, index) => `
         <li class="flex items-start" data-aos="fade-up" data-aos-delay="${index * 100}">
-            <div class="flex-shrink-0 mt-1 mr-4 text-emerald-600"><i class="fa-solid fa-user-graduate"></i></div>
+            <div class="flex-shrink-0 mt-1 mr-4 text-blue-600"><i class="fa-solid fa-user-graduate"></i></div>
             <div>
                 <h4 class="font-bold text-lg text-slate-800">${item.degree}</h4>
                 ${item.location ? `<p class="text-slate-600 font-medium">${item.location}</p>` : ''}
@@ -60,7 +60,7 @@ function renderFloatingButtons() {
                 <span class="absolute right-14 md:right-16 bg-slate-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none text-base">WhatsApp Assistant</span>
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
-            <a href="tel:+8801711000000" class="bg-emerald-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group relative text-lg md:text-xl">
+            <a href="tel:+8801711000000" class="bg-blue-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group relative text-lg md:text-xl">
                 <span class="absolute right-14 md:right-16 bg-slate-800 text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none text-base">Call Chamber</span>
                 <i class="fa-solid fa-phone"></i>
             </a>
@@ -92,7 +92,6 @@ function initChatbot() {
     const chatInput = document.getElementById('chat-input');
     const chatMessages = document.getElementById('chat-messages');
 
-    // Toggle Chat Window Open/Close
     toggleBtn.addEventListener('click', () => {
         chatWindow.classList.toggle('hidden');
         setTimeout(() => chatWindow.classList.toggle('scale-0'), 10);
@@ -121,7 +120,7 @@ function initChatbot() {
     function addMessage(text, isUser) {
         const msgDiv = document.createElement('div');
         msgDiv.className = `p-3 rounded-lg text-sm max-w-[85%] shadow-sm ${
-            isUser ? 'bg-emerald-600 text-white self-end rounded-tr-none' : 'bg-white text-slate-700 self-start rounded-tl-none border border-slate-100'
+            isUser ? 'bg-blue-600 text-white self-end rounded-tr-none' : 'bg-white text-slate-700 self-start rounded-tl-none border border-slate-100'
         }`;
         msgDiv.innerHTML = text;
         chatMessages.appendChild(msgDiv);
@@ -180,8 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const popup = document.getElementById('welcomePopup');
     const closePopupBtn = document.getElementById('closePopupBtn');
     const exploreBtn = document.getElementById('exploreBtn');
-    const chatPopupBtn = document.getElementById('chatPopupBtn'); // Linked to the button in Popup
-    const chatbotWindow = document.getElementById('chatbot-window'); // Linked to the green chat UI
+    const chatPopupBtn = document.getElementById('chatPopupBtn'); 
+    const chatbotWindow = document.getElementById('chatbot-window');
     
     const visitCountEl = document.getElementById('visitCount');
     const visitorTypeEl = document.getElementById('visitorType');
@@ -224,21 +223,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closePopup = () => { popup.classList.remove('show'); };
 
-    // Standard Close Events
     closePopupBtn.addEventListener('click', closePopup);
     exploreBtn.addEventListener('click', closePopup);
 
-    // *** THE MAGIC LINK ***
-    // This connects the "Chat with Assistant" button to your custom bot
     chatPopupBtn.addEventListener('click', () => {
-        closePopup(); // Close the welcome popup
-        
-        // Open the chatbot window smoothly
+        closePopup(); 
         chatbotWindow.classList.remove('hidden');
         setTimeout(() => chatbotWindow.classList.remove('scale-0'), 10);
     });
 
-    // Automatically hide popup after 10 seconds
     setTimeout(() => { closePopup(); }, 11000);
 
     // Mobile Menu Toggles
@@ -265,10 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 20) {
             navbar.classList.add('shadow-sm', 'bg-white/95');
-            navbar.classList.remove('bg-white/90');
+            navbar.classList.remove('bg-white/95');
         } else {
             navbar.classList.remove('shadow-sm', 'bg-white/95');
-            navbar.classList.add('bg-white/90');
+            navbar.classList.add('bg-white/95');
         }
     });
 

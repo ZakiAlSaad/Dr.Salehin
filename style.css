@@ -23,7 +23,6 @@ body {
     border-radius: 0.75rem; 
 }
 
-/* FIX: Changed harsh red to a professional, subtle Emerald green glow */
 .glow-card::before {
     content: "";
     position: absolute;
@@ -54,6 +53,277 @@ body {
     margin: 1px; 
     height: calc(100% - 2px);
     width: calc(100% - 2px);
+}
+/* =========================================
+   WELCOME POPUP - DOCTOR'S THEME 
+========================================= */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7); /* Darker blur */
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.medical-theme {
+    background: #ffffff;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    /* Bouncy Entrance Animation */
+    transform: translateY(40px) scale(0.9);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(16, 185, 129, 0.1);
+}
+
+.popup-overlay.show .medical-theme {
+    transform: translateY(0) scale(1);
+}
+
+/* Decorative Emerald Top Bar */
+.medical-theme::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.close-popup {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #f1f5f9;
+    border: none;
+    color: #64748b;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close-popup:hover { 
+    background: #fee2e2; 
+    color: #ef4444; 
+    transform: rotate(90deg); /* Animated close button */
+}
+
+.popup-header {
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    padding: 40px 20px 20px;
+    position: relative;
+}
+
+/* --- ANIMATED HEARTBEAT ICON --- */
+.popup-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 185, 129, 0.2);
+    border-radius: 50%;
+    animation: pulse-animation 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+.popup-icon {
+    background: linear-gradient(135deg, #10b981, #059669); /* Emerald Gradient */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.1); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+}
+
+/* --- POPUP TYPOGRAPHY & STATS --- */
+.popup-body {
+    padding: 0 24px 30px;
+}
+
+.popup-body h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #0f172a;
+}
+
+.popup-body p {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.popup-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-item { flex: 1; display: flex; flex-direction: column; }
+.stat-divider { width: 1px; height: 40px; background: #e2e8f0; }
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #059669; /* Emerald */
+    font-family: 'Inter', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+/* --- BUTTONS --- */
+.popup-actions { display: flex; gap: 12px; }
+
+.btn-popup {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-explore {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-explore:hover { background: #e2e8f0; color: #0f172a; }
+
+.btn-contact {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.btn-contact:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+/* =========================================
+   POPUP MOBILE RESPONSIVENESS (< 576px) 
+========================================= */
+@media (max-width: 575px) {
+    .medical-theme {
+        width: 92%;
+    }
+    .popup-header {
+        padding: 30px 20px 15px;
+    }
+    .popup-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    .popup-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+    .popup-body {
+        padding: 0 20px 24px;
+    }
+    .popup-body h2 { font-size: 1.5rem; }
+    .popup-body p { 
+        font-size: 0.85rem; 
+        margin-bottom: 20px; 
+    }
+    .stat-value { font-size: 1.2rem; }
+    .popup-stats { 
+        padding: 12px; 
+        margin-bottom: 20px; 
+        border-radius: 12px;
+    }
+    .stat-divider { height: 30px; }
+    .btn-popup { 
+        padding: 12px 10px; 
+        font-size: 0.85rem; 
+    }
+    .popup-actions { 
+        flex-direction: column; /* Stack buttons on small screens */
+        gap: 10px; 
+    }
+}
+
+/* Fix Chatbot Window for Mobile */
+@media (max-width: 575px) {
+    #chatbot-window {
+        width: calc(100vw - 40px); /* Makes chat window fit mobile screen */
+        bottom: 80px; /* Moves it above the floating button */
+    }
 }
 
 /* Custom Scrollbar */
